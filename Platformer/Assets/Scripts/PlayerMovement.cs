@@ -13,6 +13,22 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D rb;             //place to store the rigidbody of the object
 
+    public static PlayerMovement instance;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            instance = this;
+        }
+
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     //public Transform StartPos
 
 
