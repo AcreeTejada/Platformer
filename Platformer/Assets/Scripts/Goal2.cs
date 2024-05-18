@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Goal2 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //Called when a Collision is detected
+    void OnCollisionEnter2D(Collision2D other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.gameObject.CompareTag("Player"))  //if the object colling wiht is the player
+        {
+            SceneManager.LoadScene("Congrats");       //move to Level2
+        }
     }
 }
